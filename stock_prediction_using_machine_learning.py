@@ -8,8 +8,9 @@ Original file is located at
 """
 
 import pandas as pd
+import numpy as np
 # Load the stock data
-file_path = r'C:\Users\numan.yaqoob\Desktop\UP\finance ML Articles\AAPL_short_volume.csv'
+file_path = r'./AAPL_short_volume.csv'
 data = pd.read_csv(file_path)
 close_prices_AAPL = data['Close']
 
@@ -38,9 +39,10 @@ train_size = int(len(data_normalized) * 0.8)
 train_data = data_normalized[:train_size]
 test_data = data_normalized[train_size:]
 
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense, Dropout
-from tensorflow.keras.optimizers import Adam
+import tensorflow as tf
+from tensorflow.python.keras.models import Sequential
+from tensorflow.python.keras.layers import LSTM, Dense, Dropout
+from tensorflow.python.keras.optimizers import Adam
 
 # Function to create LSTM model
 def create_lstm_model(units, activation, learning_rate):
@@ -202,12 +204,12 @@ from sklearn.svm import SVR
 from sklearn.ensemble import RandomForestRegressor
 from xgboost import XGBRegressor
 from lightgbm import LGBMRegressor
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense
-from tensorflow.keras.optimizers import Adam
+from tensorflow.python.keras.models import Sequential
+from tensorflow.python.keras.layers import LSTM, Dense
+from tensorflow.python.keras.optimizers import Adam
 
 # Load the stock data
-file_path = r'C:\Users\numan.yaqoob\Desktop\UP\finance ML Articles\AAPL_short_volume.csv'
+file_path = r'./AAPL_short_volume.csv'
 data = pd.read_csv(file_path)
 close_prices_AAPL = data['Close']
 
